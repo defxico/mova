@@ -70,7 +70,7 @@ function PainelPage() {
           <figure>
             <div className="flex h-48 items-end gap-3" aria-hidden="true">
               {HORAS_SEMANA.map((d) => (
-                <div key={d.dia} className="flex flex-1 flex-col items-center gap-2">
+                <div key={d.dia} className="flex h-full flex-1 flex-col items-center justify-end gap-2">
                   <div className="w-full rounded-t bg-primary/80" style={{ height: `${(d.horas / maxHoras) * 100}%` }} />
                   <span className="label-hud">{d.dia}</span>
                 </div>
