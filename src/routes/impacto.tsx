@@ -42,7 +42,7 @@ function ImpactoPage() {
 
       <div className="mx-auto max-w-7xl space-y-10 px-4 py-10 sm:px-6">
         <section aria-labelledby="problema-titulo">
-          <h2 id="problema-titulo" className="label-hud mb-4 text-accent">// o problema</h2>
+          <h2 id="problema-titulo" className="label-hud mb-4 text-accent"><span aria-hidden="true">// </span>o problema</h2>
           <ul className="grid gap-4 md:grid-cols-3">
             {NUMEROS.map((n) => (
               <li key={n.valor} className="glass hud-frame rounded-lg p-5">
@@ -55,7 +55,7 @@ function ImpactoPage() {
         </section>
 
         <section aria-labelledby="ods-titulo">
-          <h2 id="ods-titulo" className="label-hud mb-4 text-accent">// objetivos de desenvolvimento sustentável</h2>
+          <h2 id="ods-titulo" className="label-hud mb-4 text-accent"><span aria-hidden="true">// </span>objetivos de desenvolvimento sustentável</h2>
           <ul className="grid gap-4 md:grid-cols-3">
             {ODS.map((o) => (
               <li key={o.n} className="glass hud-frame rounded-lg p-5">
@@ -90,7 +90,7 @@ function ImpactoPage() {
           </HudPanel>
         </div>
 
-        <aside className="flex gap-3 rounded-lg border border-warning/40 bg-warning/10 p-4 text-sm" aria-label="Aviso">
+        <aside className="flex gap-3 rounded-lg border border-warning/40 bg-warning/10 p-4 text-sm" aria-label="Aviso importante sobre acessibilidade">
           <Info className="mt-0.5 size-5 shrink-0 text-warning" aria-hidden="true" />
           <p>
             O MOVA é uma opção a mais, nunca um substituto para ambientes acessíveis. Rampas, transporte adaptado e locais de trabalho

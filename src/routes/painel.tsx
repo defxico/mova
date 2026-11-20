@@ -18,10 +18,11 @@ export const Route = createFileRoute("/painel")({
 });
 
 const dataCurta = (iso: string) =>
-  new Date(iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "short" });
+  new Date(iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", timeZone: "America/Sao_Paulo" });
 
 function PainelPage() {
   const perfil = useMova((s) => s.perfil);
+  const primeiroNome = perfil?.nome.trim().split(/\s+/)[0] ?? "";
   const candidaturas = useMova((s) => s.candidaturas);
   const operacoes = useMova((s) => s.operacoes);
   const exemplo = operacoes.length === 0;
@@ -33,7 +34,7 @@ function PainelPage() {
     <>
       <PageIntro
         eyebrow="meu painel"
-        title={perfil ? <>Olá, <span className="text-neon">{perfil.nome.split(" ")[0]}</span></> : "Meu painel"}
+        title={primeiroNome ? <>Olá, <span className="text-neon">{primeiroNome}</span></> : "Meu painel"}
         aside={
           <Button asChild variant="neon" size="xl">
             <Link to="/controle"><Gamepad2 aria-hidden="true" /> Abrir central de controle</Link>
@@ -110,8 +111,8 @@ function PainelPage() {
                 const v = getVaga(c.vagaId);
                 return (
                   <li key={c.vagaId} className="rounded-md border border-border p-3 text-sm">
-                    <p className="font-semibold">{v?.titulo ?? c.vagaId}</p>
-                    <p className="text-muted-foreground">{v?.empresa} · enviada em {dataCurta(c.data)}</p>
+                    <p className="font-semibold">{v?.titulo ?? "Vaga indisponível"}</p>
+                    <p className="text-muted-foreground">{v ? `${v.empresa} · ` : ""}enviada em {dataCurta(c.data)}</p>
                     <Badge variant="cyan" className="mt-2">{c.status}</Badge>
                   </li>
                 );
