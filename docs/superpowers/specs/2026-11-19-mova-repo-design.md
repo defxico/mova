@@ -56,12 +56,11 @@ Cada função em `src/lib/` recebe dados e devolve dados, sem React nem `localSt
 
 - Sem perfil, ordenar por compatibilidade sinaliza que a dica "Criar perfil" deve aparecer.
 - Robô em manutenção não pode ser aberto no simulador.
-- Com o simulador conectado, a parada de emergência zera a velocidade e gera um evento no log.
-- Voltar da etapa 2 para a 1 do cadastro mantém os dados (estado do formulário preservado entre etapas).
+- Com o simulador conectado, a parada de emergência coloca o robô em modo "emergencia" e bloqueia movimento até retomar (o evento no log é conferido no navegador).
 - Filtro "rural" devolve só vagas e robôs rurais, e o total bate com a lista.
 - Compatibilidade: perfil que cobre todas as habilidades e tecnologias assistivas pontua mais que um que cobre parte.
 
-Verificação manual no navegador: fluxo principal do §11 (home, cadastro, oportunidades, candidatura, simulador, painel), navegação só por teclado, e layout em celular, tablet e desktop.
+Verificação manual no navegador: voltar da etapa 2 para a 1 do cadastro mantém os dados (estado de componente), fluxo principal do §11 (home, cadastro, oportunidades, candidatura, simulador, painel), navegação só por teclado, e layout em celular, tablet e desktop.
 
 ## README (critérios de avaliação)
 
