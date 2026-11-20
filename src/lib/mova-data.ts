@@ -329,3 +329,11 @@ export function getRobo(id: string | undefined): Robo | undefined {
 export function getVaga(id: string): Vaga | undefined {
   return VAGAS.find((v) => v.id === id);
 }
+
+export function podeSimular(r: Robo): boolean {
+  return r.status !== "manutenção";
+}
+
+export function filtrarRobos(robos: Robo[], ambiente: Ambiente | "todos"): Robo[] {
+  return ambiente === "todos" ? robos : robos.filter((r) => r.ambiente === ambiente);
+}

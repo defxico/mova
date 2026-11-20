@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PageIntro, StatusDot } from "@/components/mova/Hud";
 import { RobotArt } from "@/components/mova/RobotArt";
-import { ROBOS, type Ambiente } from "@/lib/mova-data";
+import { ROBOS, filtrarRobos, podeSimular, type Ambiente } from "@/lib/mova-data";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/robos")({
@@ -30,7 +30,7 @@ const STATUS = {
 
 function RobosPage() {
   const [amb, setAmb] = useState<Ambiente | "todos">("todos");
-  const lista = ROBOS.filter((r) => amb === "todos" || r.ambiente === amb);
+  const lista = filtrarRobos(ROBOS, amb);
   return (
     <>
       <PageIntro
@@ -108,7 +108,7 @@ function RobosPage() {
                   </div>
 
                   <div className="mt-auto pt-5">
-                    {r.status === "manutenção" ? (
+                    {!podeSimular(r) ? (
                       <Button variant="outline" className="w-full" disabled><Wrench aria-hidden="true" /> Em manutenção</Button>
                     ) : (
                       <Button asChild variant="neon" className="w-full">

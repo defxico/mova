@@ -31,7 +31,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { HudPanel, StatusDot } from "@/components/mova/Hud";
 import { CameraView } from "@/components/controle/CameraView";
 import { MiniMap } from "@/components/controle/MiniMap";
-import { ROBOS, getRobo, type Robo } from "@/lib/mova-data";
+import { ROBOS, getRobo, podeSimular, type Robo } from "@/lib/mova-data";
 import { ESTADO_INICIAL, reduzirRobo, type Direcao } from "@/lib/robot-sim";
 import { acoes, useMova } from "@/lib/mova-store";
 import { cn } from "@/lib/utils";
@@ -99,7 +99,7 @@ function Console({ robo }: { robo: Robo }) {
 
   const conectado = s.conexao === "conectado";
   const emergencia = s.modo === "emergencia";
-  const disponivel = robo.status !== "manutenção";
+  const disponivel = podeSimular(robo);
 
   const addLog = useCallback((tipo: Log["tipo"], texto: string) => {
     setLog((l) => [{ id: logId.current++, hora: horaAgora(), tipo, texto }, ...l].slice(0, 40));
@@ -273,8 +273,8 @@ function Console({ robo }: { robo: Robo }) {
               className="tap-target h-10 rounded-md border border-input bg-surface px-3 font-display text-sm tracking-wider"
             >
               {ROBOS.map((r) => (
-                <option key={r.id} value={r.id} disabled={r.status === "manutenção"}>
-                  {r.nome} · {r.ambiente} {r.status === "manutenção" ? "(manutenção)" : ""}
+                <option key={r.id} value={r.id} disabled={!podeSimular(r)}>
+                  {r.nome} · {r.ambiente} {!podeSimular(r) ? "(manutenção)" : ""}
                 </option>
               ))}
             </select>
