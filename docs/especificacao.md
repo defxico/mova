@@ -8,7 +8,7 @@ Sua presença não tem fronteira.
 
 | Projeto                                            | Versão | Status             | Origem                                                                                    |
 | -------------------------------------------------- | ------ | ------------------ | ----------------------------------------------------------------------------------------- |
-| MOVA, protótipo CitizenTech (Global Solution 2026) | 1.0    | Protótipo entregue | Protótipo iniciado no Lovable e finalizado no repositório https://github.com/defxico/mova |
+| MOVA, protótipo CitizenTech (Global Solution 2026) | 1.0    | Protótipo entregue | Protótipo iniciado no Lovable e finalizado no repositório https://github.com/defxico/mova. Site: https://mova-nine-alpha.vercel.app |
 
 ## 1. Visão geral
 
