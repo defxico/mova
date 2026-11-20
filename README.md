@@ -94,4 +94,4 @@ npm run build
 
 ## Origem
 
-Protótipo iniciado no Lovable e finalizado neste repositório. Todos os dados são fictícios.
+Protótipo iniciado no Lovable e finalizado neste repositório. 
