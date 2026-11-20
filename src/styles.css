@@ -119,12 +119,28 @@
   --sidebar-ring: var(--ring);
 
   /* Effects */
-  --gradient-neon: linear-gradient(110deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
-  --gradient-panel: linear-gradient(160deg, oklch(0.26 0.05 258 / 0.75), oklch(0.18 0.03 265 / 0.6));
-  --gradient-fade-left: linear-gradient(90deg, var(--background) 0%, oklch(0.155 0.016 272 / 0.85) 38%, transparent 75%);
+  --gradient-neon: linear-gradient(
+    110deg,
+    var(--primary) 0%,
+    var(--secondary) 60%,
+    var(--accent) 100%
+  );
+  --gradient-panel: linear-gradient(
+    160deg,
+    oklch(0.26 0.05 258 / 0.75),
+    oklch(0.18 0.03 265 / 0.6)
+  );
+  --gradient-fade-left: linear-gradient(
+    90deg,
+    var(--background) 0%,
+    oklch(0.155 0.016 272 / 0.85) 38%,
+    transparent 75%
+  );
   --gradient-fade-bottom: linear-gradient(0deg, var(--background) 0%, transparent 40%);
-  --glow-primary: 0 0 0 1px oklch(0.885 0.152 196 / 0.45), 0 0 24px -4px oklch(0.885 0.152 196 / 0.55);
-  --glow-secondary: 0 0 0 1px oklch(0.606 0.219 293 / 0.5), 0 0 24px -4px oklch(0.606 0.219 293 / 0.6);
+  --glow-primary:
+    0 0 0 1px oklch(0.885 0.152 196 / 0.45), 0 0 24px -4px oklch(0.885 0.152 196 / 0.55);
+  --glow-secondary:
+    0 0 0 1px oklch(0.606 0.219 293 / 0.5), 0 0 24px -4px oklch(0.606 0.219 293 / 0.6);
   --glow-accent: 0 0 0 1px oklch(0.665 0.25 358 / 0.55), 0 0 28px -4px oklch(0.665 0.25 358 / 0.65);
   --shadow-panel: 0 20px 50px -20px oklch(0 0 0 / 0.8), inset 0 1px 0 oklch(1 0 0 / 0.05);
   --grid-line: oklch(0.885 0.152 196 / 0.06);
@@ -270,7 +286,14 @@ html.a11y-reduce-motion *::after {
 }
 
 @utility clip-notch {
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
 }
 
 @utility scanlines {
@@ -301,25 +324,49 @@ html.a11y-reduce-motion *::after {
 
 /* ===== Animations ===== */
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 oklch(0.885 0.152 196 / 0.6); }
-  100% { box-shadow: 0 0 0 10px oklch(0.885 0.152 196 / 0); }
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.885 0.152 196 / 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 10px oklch(0.885 0.152 196 / 0);
+  }
 }
 @keyframes scan-sweep {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  92% { opacity: 1; }
-  93% { opacity: 0.6; }
-  94% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.6;
+  }
+  94% {
+    opacity: 1;
+  }
 }
 @keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 @keyframes dash-flow {
-  to { stroke-dashoffset: -40; }
+  to {
+    stroke-dashoffset: -40;
+  }
 }
 
 @utility animate-pulse-ring {

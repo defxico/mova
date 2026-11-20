@@ -22,21 +22,21 @@
 
 ## Mapa de arquivos
 
-| Arquivo | Ação | Responsabilidade |
-|---|---|---|
-| `package.json` | criar | deps só do que é usado; scripts |
-| `vite.config.ts` | criar | plugins explícitos (sem config do Lovable) |
-| `vitest.config.ts` | criar | testes de `src/lib` |
-| `src/**` (do Lovable) | copiar | app |
-| `src/routes/__root.tsx` | modificar | remover report de erro do Lovable |
-| `src/lib/mova-data.ts` | modificar | `podeSimular`, `filtrarRobos` |
-| `src/routes/robos.tsx`, `src/routes/controle.tsx` | modificar | usar os helpers |
-| `src/lib/painel.ts` | criar | `resumoJornadas` |
-| `src/routes/painel.tsx` | criar | RF-33 |
-| `src/routes/impacto.tsx` | criar | RF-34 |
-| `src/lib/*.test.ts` | criar | testes |
-| `docs/especificacao.md` | criar | spec convertida |
-| `README.md` | criar | documentação para avaliação |
+| Arquivo                                           | Ação      | Responsabilidade                           |
+| ------------------------------------------------- | --------- | ------------------------------------------ |
+| `package.json`                                    | criar     | deps só do que é usado; scripts            |
+| `vite.config.ts`                                  | criar     | plugins explícitos (sem config do Lovable) |
+| `vitest.config.ts`                                | criar     | testes de `src/lib`                        |
+| `src/**` (do Lovable)                             | copiar    | app                                        |
+| `src/routes/__root.tsx`                           | modificar | remover report de erro do Lovable          |
+| `src/lib/mova-data.ts`                            | modificar | `podeSimular`, `filtrarRobos`              |
+| `src/routes/robos.tsx`, `src/routes/controle.tsx` | modificar | usar os helpers                            |
+| `src/lib/painel.ts`                               | criar     | `resumoJornadas`                           |
+| `src/routes/painel.tsx`                           | criar     | RF-33                                      |
+| `src/routes/impacto.tsx`                          | criar     | RF-34                                      |
+| `src/lib/*.test.ts`                               | criar     | testes                                     |
+| `docs/especificacao.md`                           | criar     | spec convertida                            |
+| `README.md`                                       | criar     | documentação para avaliação                |
 
 Não copiar: `.lovable/`, `AGENTS.md`, `bunfig.toml`, `README.md`, `favicon.ico` da raiz, `src/server.ts`, `src/start.ts`, `src/lib/error-capture.ts`, `src/lib/error-page.ts`, `src/lib/lovable-error-reporting.ts`, `src/test/`.
 
@@ -45,11 +45,13 @@ Não copiar: `.lovable/`, `AGENTS.md`, `bunfig.toml`, `README.md`, `favicon.ico`
 ### Task 1: Importar o protótipo limpo e fazer o build passar
 
 **Files:**
+
 - Copy: `$SRC/src/**` (exceto a lista "Não copiar"), `$SRC/public/**`, `$SRC/.gitignore`, `$SRC/.prettierrc`, `$SRC/components.json`, `$SRC/eslint.config.js`, `$SRC/tsconfig.json`
 - Create: `package.json`, `vite.config.ts`, `.prettierignore`
 - Modify: `src/routes/__root.tsx`, `.gitignore`
 
 **Interfaces:**
+
 - Produces: app rodando com `npm run dev` e `npm run build`. `routeTree.gen.ts` é gerado pelo plugin do TanStack, não editar à mão.
 
 - [ ] **Step 1: Copiar arquivos**
@@ -143,9 +145,9 @@ export default defineConfig({
 Remover a linha `import { reportLovableError } from "../lib/lovable-error-reporting";` e, em `ErrorComponent`, remover o bloco:
 
 ```tsx
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+useEffect(() => {
+  reportLovableError(error, { boundary: "tanstack_root_error_component" });
+}, [error]);
 ```
 
 Trocar `import { useEffect, type ReactNode } from "react";` por `import type { ReactNode } from "react";`. O `console.error(error);` no topo de `ErrorComponent` fica.
@@ -189,10 +191,12 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ### Task 2: Testes das regras e helpers de robô
 
 **Files:**
+
 - Create: `vitest.config.ts`, `src/lib/matching.test.ts`, `src/lib/validation.test.ts`, `src/lib/robot-sim.test.ts`, `src/lib/mova-data.test.ts`
 - Modify: `src/lib/mova-data.ts` (fim do arquivo), `src/routes/robos.tsx:33` e `:111`, `src/routes/controle.tsx:102` e `:276-277`
 
 **Interfaces:**
+
 - Consumes: `filtrarVagas(vagas, f)`, `FILTROS_PADRAO`, `compatibilidade(vaga, perfil)` de `matching.ts`; `validarCadastro(d, campos?)`, `ETAPAS_CAMPOS`, `validarCnpj(cnpj)` de `validation.ts`; `reduzirRobo(s, a)`, `podeMover(s)`, `ESTADO_INICIAL` de `robot-sim.ts`.
 - Produces: em `mova-data.ts`, `podeSimular(r: Robo): boolean` e `filtrarRobos(robos: Robo[], ambiente: Ambiente | "todos"): Robo[]`.
 
@@ -309,7 +313,12 @@ describe("compatibilidade", () => {
 
 ```ts
 import { describe, expect, it } from "vitest";
-import { ETAPAS_CAMPOS, validarCadastro, validarCnpj, type CadastroProfissional } from "./validation";
+import {
+  ETAPAS_CAMPOS,
+  validarCadastro,
+  validarCnpj,
+  type CadastroProfissional,
+} from "./validation";
 
 const base: CadastroProfissional = {
   nome: "Ana Souza",
@@ -362,7 +371,14 @@ describe("CNPJ", () => {
 
 ```ts
 import { describe, expect, it } from "vitest";
-import { ESTADO_INICIAL, LIMITE, podeMover, reduzirRobo, type AcaoRobo, type EstadoRobo } from "./robot-sim";
+import {
+  ESTADO_INICIAL,
+  LIMITE,
+  podeMover,
+  reduzirRobo,
+  type AcaoRobo,
+  type EstadoRobo,
+} from "./robot-sim";
 
 const run = (s: EstadoRobo, ...acoes: AcaoRobo[]) => acoes.reduce(reduzirRobo, s);
 const conectado = run(ESTADO_INICIAL, { tipo: "conectar" }, { tipo: "conectado" });
@@ -418,9 +434,11 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ### Task 3: Página Meu painel (`/painel`, RF-33)
 
 **Files:**
+
 - Create: `src/lib/painel.ts`, `src/lib/painel.test.ts`, `src/routes/painel.tsx`
 
 **Interfaces:**
+
 - Consumes: `useMova(selector)` e `MovaState` (`perfil`, `candidaturas`, `operacoes`) de `mova-store.ts`; `OPERACOES_DEMO`, `HORAS_SEMANA`, `getRobo`, `getVaga`, `type Operacao` de `mova-data.ts`; `PageIntro`, `HudPanel`, `StatusDot` de `components/mova/Hud`; `Button` (variants `neon`, `hud`; size `xl`), `Badge` (variants `cyan`, `violet`, `success`, `warning`).
 - Produces: `resumoJornadas(ops: Operacao[]): { sessoes: number; horas: number; acoes: number }`.
 
@@ -486,7 +504,11 @@ export const Route = createFileRoute("/painel")({
   head: () => ({
     meta: [
       { title: "Meu painel — MOVA" },
-      { name: "description", content: "Jornadas feitas pelo robô, candidaturas e dados do seu perfil profissional no MOVA." },
+      {
+        name: "description",
+        content:
+          "Jornadas feitas pelo robô, candidaturas e dados do seu perfil profissional no MOVA.",
+      },
     ],
   }),
   component: PainelPage,
@@ -508,10 +530,20 @@ function PainelPage() {
     <>
       <PageIntro
         eyebrow="meu painel"
-        title={perfil ? <>Olá, <span className="text-neon">{perfil.nome.split(" ")[0]}</span></> : "Meu painel"}
+        title={
+          perfil ? (
+            <>
+              Olá, <span className="text-neon">{perfil.nome.split(" ")[0]}</span>
+            </>
+          ) : (
+            "Meu painel"
+          )
+        }
         aside={
           <Button asChild variant="neon" size="xl">
-            <Link to="/controle"><Gamepad2 aria-hidden="true" /> Abrir central de controle</Link>
+            <Link to="/controle">
+              <Gamepad2 aria-hidden="true" /> Abrir central de controle
+            </Link>
           </Button>
         }
       >
@@ -520,22 +552,31 @@ function PainelPage() {
 
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-3">
         <section aria-labelledby="resumo-titulo" className="lg:col-span-3">
-          <h2 id="resumo-titulo" className="sr-only">Resumo das jornadas</h2>
+          <h2 id="resumo-titulo" className="sr-only">
+            Resumo das jornadas
+          </h2>
           <dl className="grid gap-4 sm:grid-cols-3">
             {[
               { icon: Bot, rotulo: "Sessões no robô", valor: String(resumo.sessoes) },
-              { icon: Clock, rotulo: "Horas de jornada", valor: `${resumo.horas.toLocaleString("pt-BR")} h` },
+              {
+                icon: Clock,
+                rotulo: "Horas de jornada",
+                valor: `${resumo.horas.toLocaleString("pt-BR")} h`,
+              },
               { icon: Briefcase, rotulo: "Candidaturas", valor: String(candidaturas.length) },
             ].map(({ icon: Icon, rotulo, valor }) => (
               <div key={rotulo} className="glass hud-frame rounded-lg p-4">
-                <dt className="label-hud flex items-center gap-2"><Icon className="size-4" aria-hidden="true" /> {rotulo}</dt>
+                <dt className="label-hud flex items-center gap-2">
+                  <Icon className="size-4" aria-hidden="true" /> {rotulo}
+                </dt>
                 <dd className="mt-2 font-display text-3xl font-bold">{valor}</dd>
               </div>
             ))}
           </dl>
           {exemplo && (
             <p className="mt-3 text-sm text-muted-foreground">
-              Você ainda não operou um robô. Os números acima são um exemplo. Conecte-se na central de controle para registrar sua primeira jornada.
+              Você ainda não operou um robô. Os números acima são um exemplo. Conecte-se na central
+              de controle para registrar sua primeira jornada.
             </p>
           )}
         </section>
@@ -545,7 +586,10 @@ function PainelPage() {
             <div className="flex h-48 items-end gap-3" aria-hidden="true">
               {HORAS_SEMANA.map((d) => (
                 <div key={d.dia} className="flex flex-1 flex-col items-center gap-2">
-                  <div className="w-full rounded-t bg-primary/80" style={{ height: `${(d.horas / maxHoras) * 100}%` }} />
+                  <div
+                    className="w-full rounded-t bg-primary/80"
+                    style={{ height: `${(d.horas / maxHoras) * 100}%` }}
+                  />
                   <span className="label-hud">{d.dia}</span>
                 </div>
               ))}
@@ -559,16 +603,39 @@ function PainelPage() {
         <HudPanel title="Perfil" code="USR.01">
           {perfil ? (
             <dl className="space-y-2 text-sm">
-              <div><dt className="label-hud">Nome</dt><dd>{perfil.nome}</dd></div>
-              <div><dt className="label-hud">Local</dt><dd>{perfil.cidade} · {perfil.estado.toUpperCase()}</dd></div>
-              <div><dt className="label-hud">Áreas</dt><dd>{perfil.areas.join(", ")}</dd></div>
-              <div><dt className="label-hud">Habilidades</dt><dd>{perfil.habilidades.join(", ")}</dd></div>
-              <div><dt className="label-hud">Recursos de acessibilidade</dt><dd>{perfil.recursos.length ? perfil.recursos.join(", ") : "Nenhum informado"}</dd></div>
+              <div>
+                <dt className="label-hud">Nome</dt>
+                <dd>{perfil.nome}</dd>
+              </div>
+              <div>
+                <dt className="label-hud">Local</dt>
+                <dd>
+                  {perfil.cidade} · {perfil.estado.toUpperCase()}
+                </dd>
+              </div>
+              <div>
+                <dt className="label-hud">Áreas</dt>
+                <dd>{perfil.areas.join(", ")}</dd>
+              </div>
+              <div>
+                <dt className="label-hud">Habilidades</dt>
+                <dd>{perfil.habilidades.join(", ")}</dd>
+              </div>
+              <div>
+                <dt className="label-hud">Recursos de acessibilidade</dt>
+                <dd>{perfil.recursos.length ? perfil.recursos.join(", ") : "Nenhum informado"}</dd>
+              </div>
             </dl>
           ) : (
             <div className="space-y-3 text-sm">
-              <p className="text-muted-foreground">Crie seu perfil para ver a compatibilidade com as vagas.</p>
-              <Button asChild variant="hud"><Link to="/cadastro"><UserPlus aria-hidden="true" /> Criar perfil</Link></Button>
+              <p className="text-muted-foreground">
+                Crie seu perfil para ver a compatibilidade com as vagas.
+              </p>
+              <Button asChild variant="hud">
+                <Link to="/cadastro">
+                  <UserPlus aria-hidden="true" /> Criar perfil
+                </Link>
+              </Button>
             </div>
           )}
         </HudPanel>
@@ -577,7 +644,9 @@ function PainelPage() {
           {candidaturas.length === 0 ? (
             <div className="space-y-3 text-sm">
               <p className="text-muted-foreground">Nenhuma candidatura ainda.</p>
-              <Button asChild variant="hud"><Link to="/oportunidades">Ver oportunidades</Link></Button>
+              <Button asChild variant="hud">
+                <Link to="/oportunidades">Ver oportunidades</Link>
+              </Button>
             </div>
           ) : (
             <ul className="space-y-3">
@@ -586,8 +655,12 @@ function PainelPage() {
                 return (
                   <li key={c.vagaId} className="rounded-md border border-border p-3 text-sm">
                     <p className="font-semibold">{v?.titulo ?? c.vagaId}</p>
-                    <p className="text-muted-foreground">{v?.empresa} · enviada em {dataCurta(c.data)}</p>
-                    <Badge variant="cyan" className="mt-2">{c.status}</Badge>
+                    <p className="text-muted-foreground">
+                      {v?.empresa} · enviada em {dataCurta(c.data)}
+                    </p>
+                    <Badge variant="cyan" className="mt-2">
+                      {c.status}
+                    </Badge>
                   </li>
                 );
               })}
@@ -598,11 +671,17 @@ function PainelPage() {
         <HudPanel title="Jornadas registradas" code="OPS.LOG" className="lg:col-span-2">
           <ul className="divide-y divide-border">
             {jornadas.map((o) => (
-              <li key={o.id} className="flex flex-col gap-1 py-3 text-sm sm:flex-row sm:items-center sm:gap-4">
+              <li
+                key={o.id}
+                className="flex flex-col gap-1 py-3 text-sm sm:flex-row sm:items-center sm:gap-4"
+              >
                 <span className="flex items-center gap-2 font-semibold">
                   <StatusDot tone="success" /> {getRobo(o.roboId)?.nome ?? o.roboId}
                 </span>
-                <span className="text-muted-foreground">{o.local} · {dataCurta(o.data)} · {Math.round(o.duracaoMin / 6) / 10} h · {o.acoes} ações</span>
+                <span className="text-muted-foreground">
+                  {o.local} · {dataCurta(o.data)} · {Math.round(o.duracaoMin / 6) / 10} h ·{" "}
+                  {o.acoes} ações
+                </span>
                 <span className="sm:ml-auto">{o.resumo}</span>
               </li>
             ))}
@@ -632,9 +711,11 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ### Task 4: Página Impacto (`/impacto`, RF-34)
 
 **Files:**
+
 - Create: `src/routes/impacto.tsx`
 
 **Interfaces:**
+
 - Consumes: `PageIntro`, `HudPanel` de `components/mova/Hud`; `Button`, `Badge`.
 
 - [ ] **Step 1: Criar `src/routes/impacto.tsx`**
@@ -650,41 +731,91 @@ export const Route = createFileRoute("/impacto")({
   head: () => ({
     meta: [
       { title: "Impacto social e ODS — MOVA" },
-      { name: "description", content: "Como o MOVA amplia o acesso ao trabalho para pessoas com deficiência e quais Objetivos de Desenvolvimento Sustentável ele atende." },
+      {
+        name: "description",
+        content:
+          "Como o MOVA amplia o acesso ao trabalho para pessoas com deficiência e quais Objetivos de Desenvolvimento Sustentável ele atende.",
+      },
     ],
   }),
   component: ImpactoPage,
 });
 
 const NUMEROS = [
-  { valor: "18,6 mi", texto: "pessoas com deficiência no Brasil", fonte: "IBGE, PNAD Contínua 2022" },
-  { valor: "29,2%", texto: "participam da força de trabalho, contra 66,4% das pessoas sem deficiência", fonte: "IBGE, PNAD Contínua 2022" },
-  { valor: "2 em 3", texto: "vivem longe de vagas que exigem deslocamento diário", fonte: "Estimativa ilustrativa do projeto" },
+  {
+    valor: "18,6 mi",
+    texto: "pessoas com deficiência no Brasil",
+    fonte: "IBGE, PNAD Contínua 2022",
+  },
+  {
+    valor: "29,2%",
+    texto: "participam da força de trabalho, contra 66,4% das pessoas sem deficiência",
+    fonte: "IBGE, PNAD Contínua 2022",
+  },
+  {
+    valor: "2 em 3",
+    texto: "vivem longe de vagas que exigem deslocamento diário",
+    fonte: "Estimativa ilustrativa do projeto",
+  },
 ];
 
 const ODS = [
-  { n: 8, nome: "Trabalho decente e crescimento econômico", como: "Abre vagas formais (CLT, PJ, estágio) para quem não consegue se deslocar todo dia." },
-  { n: 9, nome: "Indústria, inovação e infraestrutura", como: "Usa robôs de telepresença para levar a presença profissional até onde a vaga está." },
-  { n: 10, nome: "Redução das desigualdades", como: "Inclui pessoas com deficiência e moradores do interior em times de cidade e de campo." },
+  {
+    n: 8,
+    nome: "Trabalho decente e crescimento econômico",
+    como: "Abre vagas formais (CLT, PJ, estágio) para quem não consegue se deslocar todo dia.",
+  },
+  {
+    n: 9,
+    nome: "Indústria, inovação e infraestrutura",
+    como: "Usa robôs de telepresença para levar a presença profissional até onde a vaga está.",
+  },
+  {
+    n: 10,
+    nome: "Redução das desigualdades",
+    como: "Inclui pessoas com deficiência e moradores do interior em times de cidade e de campo.",
+  },
 ];
 
 const JORNADA = [
-  { passo: "Cria o perfil", texto: "Informa habilidades e os recursos de acessibilidade que usa, em cerca de 3 minutos." },
-  { passo: "Encontra a vaga", texto: "Filtra por ambiente, área e jornada e vê a compatibilidade com cada vaga." },
-  { passo: "Treina no simulador", texto: "Pratica os controles com toque, pressionar e segurar, varredura ou teclado." },
-  { passo: "Trabalha pelo robô", texto: "Atende, orienta e monitora a distância. A jornada fica registrada no painel." },
+  {
+    passo: "Cria o perfil",
+    texto: "Informa habilidades e os recursos de acessibilidade que usa, em cerca de 3 minutos.",
+  },
+  {
+    passo: "Encontra a vaga",
+    texto: "Filtra por ambiente, área e jornada e vê a compatibilidade com cada vaga.",
+  },
+  {
+    passo: "Treina no simulador",
+    texto: "Pratica os controles com toque, pressionar e segurar, varredura ou teclado.",
+  },
+  {
+    passo: "Trabalha pelo robô",
+    texto: "Atende, orienta e monitora a distância. A jornada fica registrada no painel.",
+  },
 ];
 
 function ImpactoPage() {
   return (
     <>
-      <PageIntro eyebrow="impacto" title={<>Trabalho que <span className="text-neon">chega até você</span></>}>
-        Falta de rampa, transporte inacessível e distância dos grandes centros deixam muita gente fora do mercado. O MOVA leva a presença profissional até onde a vaga está.
+      <PageIntro
+        eyebrow="impacto"
+        title={
+          <>
+            Trabalho que <span className="text-neon">chega até você</span>
+          </>
+        }
+      >
+        Falta de rampa, transporte inacessível e distância dos grandes centros deixam muita gente
+        fora do mercado. O MOVA leva a presença profissional até onde a vaga está.
       </PageIntro>
 
       <div className="mx-auto max-w-7xl space-y-10 px-4 py-10 sm:px-6">
         <section aria-labelledby="problema-titulo">
-          <h2 id="problema-titulo" className="label-hud mb-4 text-accent">// o problema</h2>
+          <h2 id="problema-titulo" className="label-hud mb-4 text-accent">
+            // o problema
+          </h2>
           <ul className="grid gap-4 md:grid-cols-3">
             {NUMEROS.map((n) => (
               <li key={n.valor} className="glass hud-frame rounded-lg p-5">
@@ -697,7 +828,9 @@ function ImpactoPage() {
         </section>
 
         <section aria-labelledby="ods-titulo">
-          <h2 id="ods-titulo" className="label-hud mb-4 text-accent">// objetivos de desenvolvimento sustentável</h2>
+          <h2 id="ods-titulo" className="label-hud mb-4 text-accent">
+            // objetivos de desenvolvimento sustentável
+          </h2>
           <ul className="grid gap-4 md:grid-cols-3">
             {ODS.map((o) => (
               <li key={o.n} className="glass hud-frame rounded-lg p-5">
@@ -712,11 +845,13 @@ function ImpactoPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           <HudPanel title="Quem o MOVA atende" code="USR.PRF">
             <p className="text-sm">
-              Pessoas com deficiência ou mobilidade reduzida que querem escolher a vaga, o ambiente e a jornada. Elas usam controle adaptado
-              (teclado, toque, pressionar e segurar, varredura, voz, rastreamento ocular, joystick, leitor de tela) e pausas programadas.
+              Pessoas com deficiência ou mobilidade reduzida que querem escolher a vaga, o ambiente
+              e a jornada. Elas usam controle adaptado (teclado, toque, pressionar e segurar,
+              varredura, voz, rastreamento ocular, joystick, leitor de tela) e pausas programadas.
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
-              Do outro lado, empresas e organizações que querem contratar além do raio de deslocamento, com operação monitorada e parada de emergência.
+              Do outro lado, empresas e organizações que querem contratar além do raio de
+              deslocamento, com operação monitorada e parada de emergência.
             </p>
           </HudPanel>
 
@@ -724,25 +859,39 @@ function ImpactoPage() {
             <ol className="space-y-3">
               {JORNADA.map((j, i) => (
                 <li key={j.passo} className="flex gap-3 text-sm">
-                  <span className="font-display font-bold text-primary" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
-                  <span><strong>{j.passo}.</strong> {j.texto}</span>
+                  <span className="font-display font-bold text-primary" aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>
+                    <strong>{j.passo}.</strong> {j.texto}
+                  </span>
                 </li>
               ))}
             </ol>
           </HudPanel>
         </div>
 
-        <aside className="flex gap-3 rounded-lg border border-warning/40 bg-warning/10 p-4 text-sm" aria-label="Aviso">
+        <aside
+          className="flex gap-3 rounded-lg border border-warning/40 bg-warning/10 p-4 text-sm"
+          aria-label="Aviso"
+        >
           <Info className="mt-0.5 size-5 shrink-0 text-warning" aria-hidden="true" />
           <p>
-            O MOVA é uma opção a mais, nunca um substituto para ambientes acessíveis. Rampas, transporte adaptado e locais de trabalho
-            inclusivos continuam necessários. Neste protótipo, robôs, empresas e vagas são simulados.
+            O MOVA é uma opção a mais, nunca um substituto para ambientes acessíveis. Rampas,
+            transporte adaptado e locais de trabalho inclusivos continuam necessários. Neste
+            protótipo, robôs, empresas e vagas são simulados.
           </p>
         </aside>
 
         <div className="flex flex-wrap gap-3">
-          <Button asChild variant="neon" size="xl"><Link to="/cadastro"><UserPlus aria-hidden="true" /> Criar meu perfil</Link></Button>
-          <Button asChild variant="hud" size="xl"><Link to="/oportunidades">Ver oportunidades</Link></Button>
+          <Button asChild variant="neon" size="xl">
+            <Link to="/cadastro">
+              <UserPlus aria-hidden="true" /> Criar meu perfil
+            </Link>
+          </Button>
+          <Button asChild variant="hud" size="xl">
+            <Link to="/oportunidades">Ver oportunidades</Link>
+          </Button>
         </div>
       </div>
     </>
@@ -812,6 +961,7 @@ GH_TOKEN=$(gh auth token --user defxico) gh repo edit defxico/mova --homepage "<
 ### Task 6: Documentação
 
 **Files:**
+
 - Create: `docs/especificacao.md`, `README.md`, `docs/img/` (prints)
 
 - [ ] **Step 1: Converter a spec**
@@ -868,11 +1018,11 @@ Protótipo do desafio **CitizenTech — Global Solution 2026**. Robôs, empresas
 
 ## O problema
 
-| Indicador | Valor | Fonte |
-|---|---|---|
-| Pessoas com deficiência no Brasil | 18,6 milhões | IBGE, PNAD Contínua 2022 |
-| Participação na força de trabalho | 29,2% (contra 66,4% sem deficiência) | IBGE, PNAD Contínua 2022 |
-| Vivem longe de vagas com deslocamento diário | 2 em 3 | Estimativa ilustrativa do projeto |
+| Indicador                                    | Valor                                | Fonte                             |
+| -------------------------------------------- | ------------------------------------ | --------------------------------- |
+| Pessoas com deficiência no Brasil            | 18,6 milhões                         | IBGE, PNAD Contínua 2022          |
+| Participação na força de trabalho            | 29,2% (contra 66,4% sem deficiência) | IBGE, PNAD Contínua 2022          |
+| Vivem longe de vagas com deslocamento diário | 2 em 3                               | Estimativa ilustrativa do projeto |
 
 Falta de rampa, transporte inacessível e distância dos centros deixam muita gente fora do mercado. O MOVA leva a presença profissional até a vaga. Inspiração: Dawn Avatar Robot Café, em Tóquio. O MOVA é uma opção a mais, nunca substituto de ambientes acessíveis.
 
@@ -885,18 +1035,18 @@ Jornada: **Home → Cadastro (3 etapas) → Oportunidades (filtrar e ordenar por
 
 ## Telas
 
-| Rota | Tela | O que faz |
-|---|---|---|
-| `/` | Home | Produto, números, como funciona, benefícios, cidade e campo |
-| `/cadastro` | Cadastro | Profissional em 3 etapas ou empresa (`?perfil=empresa`, valida CNPJ) |
-| `/oportunidades` | Oportunidades | 7 vagas, filtros, compatibilidade, candidatura |
-| `/robos` | Central de robôs | Frota de 5 robôs com ficha técnica |
-| `/controle` | Central de controle | Simulador (`?robo=aurora-01`) com câmera, mapa, log e parada de emergência |
-| `/painel` | Meu painel | Jornadas, horas, candidaturas e perfil |
-| `/impacto` | Impacto | Números, ODS 8, 9 e 10, jornada do usuário |
+| Rota             | Tela                | O que faz                                                                  |
+| ---------------- | ------------------- | -------------------------------------------------------------------------- |
+| `/`              | Home                | Produto, números, como funciona, benefícios, cidade e campo                |
+| `/cadastro`      | Cadastro            | Profissional em 3 etapas ou empresa (`?perfil=empresa`, valida CNPJ)       |
+| `/oportunidades` | Oportunidades       | 7 vagas, filtros, compatibilidade, candidatura                             |
+| `/robos`         | Central de robôs    | Frota de 5 robôs com ficha técnica                                         |
+| `/controle`      | Central de controle | Simulador (`?robo=aurora-01`) com câmera, mapa, log e parada de emergência |
+| `/painel`        | Meu painel          | Jornadas, horas, candidaturas e perfil                                     |
+| `/impacto`       | Impacto             | Números, ODS 8, 9 e 10, jornada do usuário                                 |
 
-| Oportunidades | Central de controle | Painel |
-|---|---|---|
+| Oportunidades                                | Central de controle                | Painel                         |
+| -------------------------------------------- | ---------------------------------- | ------------------------------ |
 | ![Oportunidades](docs/img/oportunidades.png) | ![Controle](docs/img/controle.png) | ![Painel](docs/img/painel.png) |
 
 ## Como o JavaScript melhora a experiência
@@ -943,9 +1093,9 @@ npm run build
 
 ## Integrantes
 
-| Nome | RM |
-|---|---|
-| (preencher) | |
+| Nome        | RM  |
+| ----------- | --- |
+| (preencher) |     |
 
 ## Origem
 

@@ -10,7 +10,13 @@ export function LogoMark({ className = "size-8" }: { className?: string }) {
           <stop offset="1" stopColor="var(--accent)" />
         </linearGradient>
       </defs>
-      <path d="M4 34V8l16 14L36 8v26" fill="none" stroke="url(#mova-g)" strokeWidth="3.2" strokeLinejoin="round" />
+      <path
+        d="M4 34V8l16 14L36 8v26"
+        fill="none"
+        stroke="url(#mova-g)"
+        strokeWidth="3.2"
+        strokeLinejoin="round"
+      />
       <circle cx="20" cy="22" r="3" fill="var(--primary)" />
     </svg>
   );
@@ -18,10 +24,16 @@ export function LogoMark({ className = "size-8" }: { className?: string }) {
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2.5 rounded-md" aria-label="MOVA — página inicial">
+    <Link
+      to="/"
+      className="flex items-center gap-2.5 rounded-md"
+      aria-label="MOVA — página inicial"
+    >
       <LogoMark />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-bold tracking-[0.25em] text-foreground">MOVA</span>
+        <span className="font-display text-lg font-bold tracking-[0.25em] text-foreground">
+          MOVA
+        </span>
         <span className="hidden font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground sm:block">
           telepresença inclusiva
         </span>

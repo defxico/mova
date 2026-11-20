@@ -7,7 +7,9 @@ describe("preferenciasDoPerfil", () => {
   });
 
   it("varredura (acionador único) define o modo varredura", () => {
-    expect(preferenciasDoPerfil(["Modo varredura (acionador único)"])).toEqual({ modoControle: "varredura" });
+    expect(preferenciasDoPerfil(["Modo varredura (acionador único)"])).toEqual({
+      modoControle: "varredura",
+    });
   });
 
   it("controle por teclado ativa os atalhos", () => {
@@ -16,7 +18,11 @@ describe("preferenciasDoPerfil", () => {
 
   it("combina recursos e ignora os que não afetam o simulador", () => {
     expect(
-      preferenciasDoPerfil(["Leitor de tela", "Controle por teclado", "Modo varredura (acionador único)"]),
+      preferenciasDoPerfil([
+        "Leitor de tela",
+        "Controle por teclado",
+        "Modo varredura (acionador único)",
+      ]),
     ).toEqual({ modoControle: "varredura", atalhosTeclado: true });
     expect(preferenciasDoPerfil(["Leitor de tela", "Pausas programadas"])).toEqual({});
   });

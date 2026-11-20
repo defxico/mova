@@ -27,11 +27,17 @@ export function ChipGroup({
       id={`campo-${name}`}
       tabIndex={-1}
       aria-invalid={!!error}
-      aria-describedby={[hint ? hintId : "", error ? errId : ""].filter(Boolean).join(" ") || undefined}
+      aria-describedby={
+        [hint ? hintId : "", error ? errId : ""].filter(Boolean).join(" ") || undefined
+      }
       className="rounded-md"
     >
       <legend className="text-sm font-semibold">{legend}</legend>
-      {hint && <p id={hintId} className="mt-1 text-xs text-muted-foreground">{hint}</p>}
+      {hint && (
+        <p id={hintId} className="mt-1 text-xs text-muted-foreground">
+          {hint}
+        </p>
+      )}
       <div className="mt-3 flex flex-wrap gap-2">
         {options.map((o) => {
           const checked = value.includes(o);
@@ -41,7 +47,9 @@ export function ChipGroup({
               className={cn(
                 "tap-target inline-flex cursor-pointer select-none items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors",
                 "has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary",
-                checked ? "border-primary bg-primary/15 text-primary" : "border-border bg-surface/60 hover:border-primary/60",
+                checked
+                  ? "border-primary bg-primary/15 text-primary"
+                  : "border-border bg-surface/60 hover:border-primary/60",
               )}
             >
               <input
@@ -61,7 +69,11 @@ export function ChipGroup({
           );
         })}
       </div>
-      {error && <p id={errId} role="alert" className="mt-2 text-sm font-medium text-accent">⚠ {error}</p>}
+      {error && (
+        <p id={errId} role="alert" className="mt-2 text-sm font-medium text-accent">
+          ⚠ {error}
+        </p>
+      )}
     </fieldset>
   );
 }

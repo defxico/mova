@@ -10,11 +10,11 @@ Protótipo do desafio **CitizenTech — Global Solution 2026**. Robôs, empresas
 
 ## O problema
 
-| Indicador | Valor | Fonte |
-|---|---|---|
-| Pessoas com deficiência no Brasil | 18,6 milhões | IBGE, PNAD Contínua 2022 |
-| Participação na força de trabalho | 29,2% (contra 66,4% sem deficiência) | IBGE, PNAD Contínua 2022 |
-| Vivem longe de vagas com deslocamento diário | 2 em 3 | Estimativa ilustrativa do projeto |
+| Indicador                                    | Valor                                | Fonte                             |
+| -------------------------------------------- | ------------------------------------ | --------------------------------- |
+| Pessoas com deficiência no Brasil            | 18,6 milhões                         | IBGE, PNAD Contínua 2022          |
+| Participação na força de trabalho            | 29,2% (contra 66,4% sem deficiência) | IBGE, PNAD Contínua 2022          |
+| Vivem longe de vagas com deslocamento diário | 2 em 3                               | Estimativa ilustrativa do projeto |
 
 Falta de rampa, transporte inacessível e distância dos centros deixam muita gente fora do mercado. O MOVA leva a presença profissional até a vaga. Inspiração: Dawn Avatar Robot Café, em Tóquio. O MOVA é uma opção a mais, nunca substituto de ambientes acessíveis.
 
@@ -27,18 +27,18 @@ Jornada: **Home → Cadastro (3 etapas) → Oportunidades (filtrar e ordenar por
 
 ## Telas
 
-| Rota | Tela | O que faz |
-|---|---|---|
-| `/` | Home | Produto, números, como funciona, benefícios, cidade e campo |
-| `/cadastro` | Cadastro | Profissional em 3 etapas ou empresa (`?perfil=empresa`, valida CNPJ) |
-| `/oportunidades` | Oportunidades | 7 vagas, filtros, compatibilidade, candidatura |
-| `/robos` | Central de robôs | Frota de 5 robôs com ficha técnica |
-| `/controle` | Central de controle | Simulador (`?robo=aurora-01`) com câmera, mapa, log e parada de emergência |
-| `/painel` | Meu painel | Jornadas, horas, candidaturas e perfil |
-| `/impacto` | Impacto | Números, ODS 8, 9 e 10, jornada do usuário |
+| Rota             | Tela                | O que faz                                                                  |
+| ---------------- | ------------------- | -------------------------------------------------------------------------- |
+| `/`              | Home                | Produto, números, como funciona, benefícios, cidade e campo                |
+| `/cadastro`      | Cadastro            | Profissional em 3 etapas ou empresa (`?perfil=empresa`, valida CNPJ)       |
+| `/oportunidades` | Oportunidades       | 7 vagas, filtros, compatibilidade, candidatura                             |
+| `/robos`         | Central de robôs    | Frota de 5 robôs com ficha técnica                                         |
+| `/controle`      | Central de controle | Simulador (`?robo=aurora-01`) com câmera, mapa, log e parada de emergência |
+| `/painel`        | Meu painel          | Jornadas, horas, candidaturas e perfil                                     |
+| `/impacto`       | Impacto             | Números, ODS 8, 9 e 10, jornada do usuário                                 |
 
-| Oportunidades | Central de controle | Painel |
-|---|---|---|
+| Oportunidades                                | Central de controle                | Painel                         |
+| -------------------------------------------- | ---------------------------------- | ------------------------------ |
 | ![Oportunidades](docs/img/oportunidades.jpg) | ![Controle](docs/img/controle.jpg) | ![Painel](docs/img/painel.jpg) |
 
 ## Como o JavaScript melhora a experiência
@@ -85,9 +85,9 @@ npm run build
 
 ## Integrantes
 
-| Nome | RM |
-|---|---|
-| (preencher) | |
+| Nome        | RM  |
+| ----------- | --- |
+| (preencher) |     |
 
 ## Origem
 

@@ -81,14 +81,22 @@ export function reduzirRobo(s: EstadoRobo, a: AcaoRobo): EstadoRobo {
       if (bloqueio) return { ...s, ultimoBloqueio: bloqueio };
       if (a.direcao === "esquerda" || a.direcao === "direita") {
         const giro = a.direcao === "esquerda" ? -15 : 15;
-        return { ...s, heading: (s.heading + giro + 360) % 360, passos: s.passos + 1, ultimoBloqueio: null };
+        return {
+          ...s,
+          heading: (s.heading + giro + 360) % 360,
+          passos: s.passos + 1,
+          ultimoBloqueio: null,
+        };
       }
       const passo = 0.5 * s.velocidade * (a.direcao === "frente" ? 1 : -1);
       const rad = (s.heading * Math.PI) / 180;
       const nx = round(s.x + Math.sin(rad) * passo);
       const ny = round(s.y + Math.cos(rad) * passo);
       if (nx < 0 || nx > LIMITE || ny < 0 || ny > LIMITE) {
-        return { ...s, ultimoBloqueio: "Obstáculo detectado: limite da área segura. O robô não avançou." };
+        return {
+          ...s,
+          ultimoBloqueio: "Obstáculo detectado: limite da área segura. O robô não avançou.",
+        };
       }
       return {
         ...s,

@@ -1,7 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { Briefcase, Bot, Gamepad2, LayoutDashboard, Menu, Sparkles, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { Logo } from "./Logo";
 import { AccessibilitySheet } from "./AccessibilityPanel";
 
@@ -32,7 +39,11 @@ export function SiteHeader() {
           <ul className="flex items-center gap-1">
             {NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} className={linkCls} activeProps={{ className: activeCls, "aria-current": "page" }}>
+                <Link
+                  to={n.to}
+                  className={linkCls}
+                  activeProps={{ className: activeCls, "aria-current": "page" }}
+                >
                   <n.icon className="size-4" aria-hidden="true" />
                   {n.label}
                 </Link>
@@ -59,10 +70,19 @@ export function SiteHeader() {
               </SheetHeader>
               <nav aria-label="Navegação móvel" className="mt-6">
                 <ul className="space-y-1">
-                  {[{ to: "/", label: "Início", icon: Sparkles } as const, ...NAV, { to: "/cadastro", label: "Cadastrar", icon: UserPlus } as const].map((n) => (
+                  {[
+                    { to: "/", label: "Início", icon: Sparkles } as const,
+                    ...NAV,
+                    { to: "/cadastro", label: "Cadastrar", icon: UserPlus } as const,
+                  ].map((n) => (
                     <li key={n.to}>
                       <SheetClose asChild>
-                        <Link to={n.to} className={`${linkCls} tap-target text-base`} activeProps={{ className: activeCls }} activeOptions={{ exact: n.to === "/" }}>
+                        <Link
+                          to={n.to}
+                          className={`${linkCls} tap-target text-base`}
+                          activeProps={{ className: activeCls }}
+                          activeOptions={{ exact: n.to === "/" }}
+                        >
                           <n.icon className="size-5" aria-hidden="true" />
                           {n.label}
                         </Link>

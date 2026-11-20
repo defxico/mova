@@ -23,7 +23,9 @@ function NotFoundComponent() {
         <p className="label-hud text-accent">// sinal perdido</p>
         <h1 className="mt-2 font-display text-7xl font-bold text-neon">404</h1>
         <h2 className="mt-4 text-xl font-semibold">Página não encontrada</h2>
-        <p className="mt-2 text-sm text-muted-foreground">Este endereço não existe ou foi movido.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Este endereço não existe ou foi movido.
+        </p>
         <div className="mt-6">
           <Link
             to="/"
@@ -44,8 +46,12 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">Esta página não carregou</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Algo deu errado. Tente novamente ou volte ao início.</p>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          Esta página não carregou
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Algo deu errado. Tente novamente ou volte ao início.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -74,11 +80,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "MOVA — Trabalho remoto por robôs de telepresença" },
-      { name: "description", content: "Plataforma de empregabilidade inclusiva que conecta pessoas com deficiência a vagas operadas por robôs de telepresença." },
+      {
+        name: "description",
+        content:
+          "Plataforma de empregabilidade inclusiva que conecta pessoas com deficiência a vagas operadas por robôs de telepresença.",
+      },
       { name: "author", content: "MOVA — Global Solution 2026" },
       { name: "theme-color", content: "#090B12" },
       { property: "og:title", content: "MOVA — Trabalho remoto por robôs de telepresença" },
-      { property: "og:description", content: "Mobilidade, Oportunidade, Voz e Autonomia: robótica a serviço da inclusão profissional." },
+      {
+        property: "og:description",
+        content:
+          "Mobilidade, Oportunidade, Voz e Autonomia: robótica a serviço da inclusão profissional.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

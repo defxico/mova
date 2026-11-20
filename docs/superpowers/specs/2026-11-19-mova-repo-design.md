@@ -13,15 +13,15 @@ Já pronto no Lovable: home, cadastro em 3 etapas (com aba empresa e validação
 
 ## Decisões
 
-| Tema | Decisão |
-|---|---|
-| Stack | Manter a do Lovable (TanStack Start, React, TS, Tailwind, shadcn/ui) |
-| Extração | Ler os arquivos pelo editor/API do Lovable no navegador e recriar localmente; imagens baixadas uma a uma. Nada é alterado na conta da Amanda |
-| Importação | Abordagem B: importar já limpo. Primeiro commit sem componentes shadcn não usados, sem arquivos de config específicos do Lovable que não servem fora dele |
+| Tema        | Decisão                                                                                                                                                                             |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stack       | Manter a do Lovable (TanStack Start, React, TS, Tailwind, shadcn/ui)                                                                                                                |
+| Extração    | Ler os arquivos pelo editor/API do Lovable no navegador e recriar localmente; imagens baixadas uma a uma. Nada é alterado na conta da Amanda                                        |
+| Importação  | Abordagem B: importar já limpo. Primeiro commit sem componentes shadcn não usados, sem arquivos de config específicos do Lovable que não servem fora dele                           |
 | Repositório | `C:\dev\MOVA`, remote `https://github.com/defxico/mova`, branch `main`. Identidade git local ao repo (conta defxico, e-mail noreply). Config global e conta ativa do `gh` não mudam |
-| Deploy | Vercel ligado ao repo, com deploy a cada push em `main`. A conta Vercel é criada/ligada pelo usuário; o repo traz a config pronta |
-| Testes | Vitest, só lógica pura |
-| Integrantes | Seção no README, nomes informados depois pelo usuário |
+| Deploy      | Vercel ligado ao repo, com deploy a cada push em `main`. A conta Vercel é criada/ligada pelo usuário; o repo traz a config pronta                                                   |
+| Testes      | Vitest, só lógica pura                                                                                                                                                              |
+| Integrantes | Seção no README, nomes informados depois pelo usuário                                                                                                                               |
 
 ## Escopo desta entrega
 

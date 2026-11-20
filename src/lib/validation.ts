@@ -35,7 +35,8 @@ export function validarCadastro(
   }
   if (quer("email")) {
     if (!d.email.trim()) e.email = "Informe seu e-mail.";
-    else if (!EMAIL_RE.test(d.email.trim())) e.email = "Digite um e-mail válido, como nome@exemplo.com.";
+    else if (!EMAIL_RE.test(d.email.trim()))
+      e.email = "Digite um e-mail válido, como nome@exemplo.com.";
   }
   if (quer("cidade") && !d.cidade.trim()) e.cidade = "Informe sua cidade.";
   if (quer("estado") && !/^[A-Za-z]{2}$/.test(d.estado.trim()))

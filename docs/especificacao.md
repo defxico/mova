@@ -6,9 +6,9 @@ MOVA
 
 Sua presença não tem fronteira.
 
-| Projeto | Versão | Status | Origem |
-|---|---|---|---|
-| MOVA, protótipo CitizenTech (Global Solution 2026) | 1.0 | Rascunho | Site publicado em neon-mova-command.lovable.app; código em https://github.com/defxico/mova |
+| Projeto                                            | Versão | Status   | Origem                                                                                     |
+| -------------------------------------------------- | ------ | -------- | ------------------------------------------------------------------------------------------ |
+| MOVA, protótipo CitizenTech (Global Solution 2026) | 1.0    | Rascunho | Site publicado em neon-mova-command.lovable.app; código em https://github.com/defxico/mova |
 
 ## 1. Visão geral
 
@@ -24,11 +24,11 @@ Nesta versão, robôs, empresas e vagas são simulados. Nenhum robô real é con
 
 Falta de rampa, transporte inacessível e a distância dos grandes centros deixam muita gente fora do mercado de trabalho. Os números usados no produto:
 
-| Indicador | Valor | Fonte |
-|---|---|---|
-| Pessoas com deficiência no Brasil | 18,6 milhões | IBGE, PNAD Contínua 2022 |
-| Participação na força de trabalho | 29,2% (contra 66,4% das pessoas sem deficiência) | IBGE, PNAD Contínua 2022 |
-| Vivem longe de vagas que exigem deslocamento diário | 2 em 3 | Estimativa ilustrativa do projeto |
+| Indicador                                           | Valor                                            | Fonte                             |
+| --------------------------------------------------- | ------------------------------------------------ | --------------------------------- |
+| Pessoas com deficiência no Brasil                   | 18,6 milhões                                     | IBGE, PNAD Contínua 2022          |
+| Participação na força de trabalho                   | 29,2% (contra 66,4% das pessoas sem deficiência) | IBGE, PNAD Contínua 2022          |
+| Vivem longe de vagas que exigem deslocamento diário | 2 em 3                                           | Estimativa ilustrativa do projeto |
 
 ## 3. Objetivos e métricas
 
@@ -54,36 +54,36 @@ Para acompanhar o produto:
 
 ## 4. Quem usa
 
-| Perfil | O que quer | O que precisa |
-|---|---|---|
-| Profissional com deficiência ou mobilidade reduzida | Escolher a vaga, o ambiente e a jornada | Controle adaptado (teclado, toque, pressionar e segurar, varredura, voz, rastreamento ocular, joystick, leitor de tela) e pausas programadas |
-| Empresa ou organização parceira | Contratar além do raio de deslocamento e ter times mais diversos | Robôs prontos para operar, status de conexão, histórico de operações e parada de emergência. O MOVA é uma opção a mais, nunca um substituto para ambientes acessíveis |
+| Perfil                                              | O que quer                                                       | O que precisa                                                                                                                                                         |
+| --------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Profissional com deficiência ou mobilidade reduzida | Escolher a vaga, o ambiente e a jornada                          | Controle adaptado (teclado, toque, pressionar e segurar, varredura, voz, rastreamento ocular, joystick, leitor de tela) e pausas programadas                          |
+| Empresa ou organização parceira                     | Contratar além do raio de deslocamento e ter times mais diversos | Robôs prontos para operar, status de conexão, histórico de operações e parada de emergência. O MOVA é uma opção a mais, nunca um substituto para ambientes acessíveis |
 
 ## 5. Escopo
 
-| Entra no protótipo | Fica de fora |
-|---|---|
-| Site institucional com benefícios e aplicações | Conexão com robôs reais |
-| Cadastro de profissional e de empresa | Tarefas perigosas ou que exijam força física |
-| Vitrine de vagas com filtros | Contratação, pagamento e contratos de verdade |
-| Catálogo de robôs com ficha técnica |  |
-| Simulador de controle remoto |  |
-| Painel profissional e página de impacto e ODS |  |
-| Menu de acessibilidade |  |
+| Entra no protótipo                             | Fica de fora                                  |
+| ---------------------------------------------- | --------------------------------------------- |
+| Site institucional com benefícios e aplicações | Conexão com robôs reais                       |
+| Cadastro de profissional e de empresa          | Tarefas perigosas ou que exijam força física  |
+| Vitrine de vagas com filtros                   | Contratação, pagamento e contratos de verdade |
+| Catálogo de robôs com ficha técnica            |                                               |
+| Simulador de controle remoto                   |                                               |
+| Painel profissional e página de impacto e ODS  |                                               |
+| Menu de acessibilidade                         |                                               |
 
 Todos os dados são fictícios, e as tarefas respeitam o que os robôs realmente conseguem fazer.
 
 ## 6. Mapa do site
 
-| Rota | Tela | Para que serve |
-|---|---|---|
-| / | Home | Apresenta o produto, os números, como funciona, benefícios e aplicações |
-| /cadastro | Cadastro | Perfil de profissional ou de empresa (?perfil=empresa) |
-| /oportunidades | Oportunidades | Lista de vagas com filtros |
-| /robos | Central de robôs | Catálogo da frota |
-| /controle | Central de controle | Simulador (?robo=aurora-01) |
-| /painel | Meu painel | Jornadas e candidaturas do profissional |
-| /impacto | Impacto | Impacto social e ODS |
+| Rota           | Tela                | Para que serve                                                          |
+| -------------- | ------------------- | ----------------------------------------------------------------------- |
+| /              | Home                | Apresenta o produto, os números, como funciona, benefícios e aplicações |
+| /cadastro      | Cadastro            | Perfil de profissional ou de empresa (?perfil=empresa)                  |
+| /oportunidades | Oportunidades       | Lista de vagas com filtros                                              |
+| /robos         | Central de robôs    | Catálogo da frota                                                       |
+| /controle      | Central de controle | Simulador (?robo=aurora-01)                                             |
+| /painel        | Meu painel          | Jornadas e candidaturas do profissional                                 |
+| /impacto       | Impacto             | Impacto social e ODS                                                    |
 
 O cabeçalho tem os links das telas, o botão Acessibilidade e o botão Cadastrar. No topo há um link para pular direto ao conteúdo, e o rodapé repete os links da plataforma e do projeto.
 
@@ -133,15 +133,15 @@ O cabeçalho tem os links das telas, o botão Acessibilidade e o botão Cadastra
 
 Vagas usadas no protótipo:
 
-| Vaga | Empresa | Robô | Contrato e jornada |
-|---|---|---|---|
-| Recepcionista via telepresença | Vértice Design Store (SP) | AURORA-01 | CLT, 6h |
-| Orientador(a) de visitantes | Museu do Amanhã (RJ) | LUMEN-03 | PJ, 4h |
-| Atendente de recepção pública | Prefeitura do Recife (PE) | ORION-07 | Temporário, 6h |
-| Consultor(a) de produtos | Vértice Design Store (SP) | AURORA-01 | CLT, 8h |
-| Monitor(a) remoto de estufas | Cooperativa Verde Vale (SP) | TERRA-02 | CLT, flexível |
-| Inspetor(a) visual de equipamentos | Fazenda Boa Esperança (MT) | CAMPO-05 | PJ, 4h |
-| Ponte de comunicação com equipes de campo | Cooperativa Verde Vale (SP) | TERRA-02 | Estágio, 4h |
+| Vaga                                      | Empresa                     | Robô      | Contrato e jornada |
+| ----------------------------------------- | --------------------------- | --------- | ------------------ |
+| Recepcionista via telepresença            | Vértice Design Store (SP)   | AURORA-01 | CLT, 6h            |
+| Orientador(a) de visitantes               | Museu do Amanhã (RJ)        | LUMEN-03  | PJ, 4h             |
+| Atendente de recepção pública             | Prefeitura do Recife (PE)   | ORION-07  | Temporário, 6h     |
+| Consultor(a) de produtos                  | Vértice Design Store (SP)   | AURORA-01 | CLT, 8h            |
+| Monitor(a) remoto de estufas              | Cooperativa Verde Vale (SP) | TERRA-02  | CLT, flexível      |
+| Inspetor(a) visual de equipamentos        | Fazenda Boa Esperança (MT)  | CAMPO-05  | PJ, 4h             |
+| Ponte de comunicação com equipes de campo | Cooperativa Verde Vale (SP) | TERRA-02  | Estágio, 4h        |
 
 ### 7.4 Central de robôs
 
@@ -155,13 +155,13 @@ Vagas usadas no protótipo:
 
 Frota usada no protótipo:
 
-| Código | Modelo | Ambiente | Status | Tecnologias assistivas |
-|---|---|---|---|---|
-| AURORA-01 | Torre de telepresença T2 | Urbano (SP) | Disponível | Teclado, varredura, joystick, leitor de tela |
-| LUMEN-03 | Assistente de eventos E1 | Urbano (RJ) | Em operação | Teclado, voz, rastreamento ocular, leitor de tela |
-| ORION-07 | Recepcionista corporativo R3 | Urbano (PE) | Disponível | Teclado, joystick, pausas programadas |
-| TERRA-02 | Rover agrícola A4 | Rural (SP) | Disponível | Teclado, varredura, voz, jornada flexível |
-| CAMPO-05 | Inspetor de equipamentos I2 | Rural (MT) | Manutenção | Teclado, joystick, rastreamento ocular |
+| Código    | Modelo                       | Ambiente    | Status      | Tecnologias assistivas                            |
+| --------- | ---------------------------- | ----------- | ----------- | ------------------------------------------------- |
+| AURORA-01 | Torre de telepresença T2     | Urbano (SP) | Disponível  | Teclado, varredura, joystick, leitor de tela      |
+| LUMEN-03  | Assistente de eventos E1     | Urbano (RJ) | Em operação | Teclado, voz, rastreamento ocular, leitor de tela |
+| ORION-07  | Recepcionista corporativo R3 | Urbano (PE) | Disponível  | Teclado, joystick, pausas programadas             |
+| TERRA-02  | Rover agrícola A4            | Rural (SP)  | Disponível  | Teclado, varredura, voz, jornada flexível         |
+| CAMPO-05  | Inspetor de equipamentos I2  | Rural (MT)  | Manutenção  | Teclado, joystick, rastreamento ocular            |
 
 ### 7.5 Central de controle (simulador)
 
@@ -201,15 +201,15 @@ Frota usada no protótipo:
 
 ## 8. Requisitos não funcionais
 
-| Área | Requisito |
-|---|---|
+| Área           | Requisito                                                                                                                                                                        |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Acessibilidade | Seguir a WCAG 2.2 AA: uso completo pelo teclado, link para pular ao conteúdo, texto alternativo nas imagens, boa leitura em leitores de tela e áreas de toque grandes o bastante |
-| Segurança | Parada de emergência sempre à mão, velocidade limitada, área segura marcada e robôs em manutenção bloqueados |
-| Desempenho | Latência perto de 48 ms e resposta imediata aos comandos |
-| Telas | Funcionar em desktop, tablet e celular, com controles por toque |
-| Privacidade | Dados de acessibilidade são sensíveis (LGPD): pedir consentimento claro e coletar só o necessário |
-| Conexão | Mostrar o estado (desconectado, conectando, conectado, falha) também em texto, não só por cor ou ícone |
-| Idioma | Português do Brasil |
+| Segurança      | Parada de emergência sempre à mão, velocidade limitada, área segura marcada e robôs em manutenção bloqueados                                                                     |
+| Desempenho     | Latência perto de 48 ms e resposta imediata aos comandos                                                                                                                         |
+| Telas          | Funcionar em desktop, tablet e celular, com controles por toque                                                                                                                  |
+| Privacidade    | Dados de acessibilidade são sensíveis (LGPD): pedir consentimento claro e coletar só o necessário                                                                                |
+| Conexão        | Mostrar o estado (desconectado, conectando, conectado, falha) também em texto, não só por cor ou ícone                                                                           |
+| Idioma         | Português do Brasil                                                                                                                                                              |
 
 ## 9. Design e interface
 
@@ -223,14 +223,14 @@ Frota usada no protótipo:
 
 ## 10. Dados
 
-| Entidade | Campos principais |
-|---|---|
-| Profissional | nome, e-mail, cidade, estado, habilidades, preferências, recursos de acessibilidade, modo de controle |
-| Empresa | nome, contato, local, vagas, robôs vinculados |
-| Vaga | título, área, ambiente, empresa, local, robô, contrato, jornada, remuneração, habilidades |
-| Robô | código, modelo, função, local, status, bateria, velocidade, autonomia, movimentação, comunicação, tecnologias assistivas |
-| Candidatura | profissional, vaga, status, compatibilidade |
-| Sessão de operação | profissional, robô, início, duração, latência, movimentos, registro de comunicação |
+| Entidade           | Campos principais                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Profissional       | nome, e-mail, cidade, estado, habilidades, preferências, recursos de acessibilidade, modo de controle                    |
+| Empresa            | nome, contato, local, vagas, robôs vinculados                                                                            |
+| Vaga               | título, área, ambiente, empresa, local, robô, contrato, jornada, remuneração, habilidades                                |
+| Robô               | código, modelo, função, local, status, bateria, velocidade, autonomia, movimentação, comunicação, tecnologias assistivas |
+| Candidatura        | profissional, vaga, status, compatibilidade                                                                              |
+| Sessão de operação | profissional, robô, início, duração, latência, movimentos, registro de comunicação                                       |
 
 A compatibilidade cruza as habilidades do perfil com as da vaga e os recursos de acessibilidade da pessoa com os do robô.
 
@@ -283,10 +283,9 @@ Resolvido nesta entrega:
 
 ## 14. Próximas fases
 
-| Fase | Entrega |
-|---|---|
-| 1 (atual) | Protótipo navegável com dados simulados |
-| 2 | Login, dados salvos, candidatura e painel completo |
-| 3 | Painel da empresa e gestão de vagas e robôs |
-| 4 | Integração com robôs reais e métricas de operação em tempo real |
-
+| Fase      | Entrega                                                         |
+| --------- | --------------------------------------------------------------- |
+| 1 (atual) | Protótipo navegável com dados simulados                         |
+| 2         | Login, dados salvos, candidatura e painel completo              |
+| 3         | Painel da empresa e gestão de vagas e robôs                     |
+| 4         | Integração com robôs reais e métricas de operação em tempo real |

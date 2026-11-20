@@ -18,22 +18,47 @@ export function SiteFooter() {
         <nav aria-label="Plataforma">
           <h2 className="label-hud mb-3">Plataforma</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/oportunidades" className="hover:text-primary">Oportunidades</Link></li>
-            <li><Link to="/robos" className="hover:text-primary">Central de robôs</Link></li>
-            <li><Link to="/controle" className="hover:text-primary">Simulador de controle</Link></li>
-            <li><Link to="/painel" className="hover:text-primary">Painel profissional</Link></li>
+            <li>
+              <Link to="/oportunidades" className="hover:text-primary">
+                Oportunidades
+              </Link>
+            </li>
+            <li>
+              <Link to="/robos" className="hover:text-primary">
+                Central de robôs
+              </Link>
+            </li>
+            <li>
+              <Link to="/controle" className="hover:text-primary">
+                Simulador de controle
+              </Link>
+            </li>
+            <li>
+              <Link to="/painel" className="hover:text-primary">
+                Painel profissional
+              </Link>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Projeto">
           <h2 className="label-hud mb-3">Projeto</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/impacto" className="hover:text-primary">Impacto e ODS</Link></li>
-            <li><Link to="/cadastro" className="hover:text-primary">Cadastro inclusivo</Link></li>
+            <li>
+              <Link to="/impacto" className="hover:text-primary">
+                Impacto e ODS
+              </Link>
+            </li>
+            <li>
+              <Link to="/cadastro" className="hover:text-primary">
+                Cadastro inclusivo
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
       <div className="border-t border-border py-4 text-center font-mono text-xs text-muted-foreground">
-        A tecnologia não deve adaptar as pessoas ao mercado de trabalho. Deve transformar o mercado para que mais pessoas participem.
+        A tecnologia não deve adaptar as pessoas ao mercado de trabalho. Deve transformar o mercado
+        para que mais pessoas participem.
       </div>
     </footer>
   );

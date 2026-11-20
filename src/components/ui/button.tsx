@@ -18,8 +18,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         neon: "bg-primary text-primary-foreground uppercase tracking-wider font-display text-xs glow-primary hover:bg-primary/90 hover:shadow-[0_0_36px_-4px_var(--primary)]",
         hud: "glass text-foreground uppercase tracking-wider font-display text-xs hover:border-primary hover:text-primary",
-        violet: "bg-secondary text-secondary-foreground uppercase tracking-wider font-display text-xs glow-secondary hover:bg-secondary/90",
-        emergency: "bg-accent text-accent-foreground uppercase tracking-widest font-display font-bold glow-accent hover:bg-accent/90",
+        violet:
+          "bg-secondary text-secondary-foreground uppercase tracking-wider font-display text-xs glow-secondary hover:bg-secondary/90",
+        emergency:
+          "bg-accent text-accent-foreground uppercase tracking-widest font-display font-bold glow-accent hover:bg-accent/90",
       },
       size: {
         default: "h-9 px-4 py-2",

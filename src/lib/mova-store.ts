@@ -18,7 +18,8 @@ export interface PreferenciasA11y {
   atalhosTeclado: boolean;
 }
 
-export type StatusCandidatura = "Enviada" | "Em análise" | "Entrevista agendada" | "Treinamento no robô";
+export type StatusCandidatura =
+  "Enviada" | "Em análise" | "Entrevista agendada" | "Treinamento no robô";
 
 export interface Candidatura {
   vagaId: string;
@@ -119,7 +120,10 @@ export const acoes = {
     if (getState().candidaturas.some((c) => c.vagaId === vagaId)) return false;
     setState((s) => ({
       ...s,
-      candidaturas: [{ vagaId, data: new Date().toISOString(), status: "Enviada" }, ...s.candidaturas],
+      candidaturas: [
+        { vagaId, data: new Date().toISOString(), status: "Enviada" },
+        ...s.candidaturas,
+      ],
     }));
     return true;
   },

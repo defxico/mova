@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { ESTADO_INICIAL, LIMITE, podeMover, reduzirRobo, type AcaoRobo, type EstadoRobo } from "./robot-sim";
+import {
+  ESTADO_INICIAL,
+  LIMITE,
+  podeMover,
+  reduzirRobo,
+  type AcaoRobo,
+  type EstadoRobo,
+} from "./robot-sim";
 
 const run = (s: EstadoRobo, ...acoes: AcaoRobo[]) => acoes.reduce(reduzirRobo, s);
 const conectado = run(ESTADO_INICIAL, { tipo: "conectar" }, { tipo: "conectado" });

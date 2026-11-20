@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { ETAPAS_CAMPOS, validarCadastro, validarCnpj, type CadastroProfissional } from "./validation";
+import {
+  ETAPAS_CAMPOS,
+  validarCadastro,
+  validarCnpj,
+  type CadastroProfissional,
+} from "./validation";
 
 const base: CadastroProfissional = {
   nome: "Ana Souza",
