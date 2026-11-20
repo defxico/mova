@@ -4,7 +4,7 @@
 
 Protótipo do desafio **CitizenTech — Global Solution 2026**. Robôs, empresas e vagas são simulados.
 
-**Site:** https://mova-nine-alpha.vercel.app · **Especificação:** [docs/especificacao.md](docs/especificacao.md)
+**Site:** https://mova-nine-alpha.vercel.app · **Especificação:** [docs/especificacao.md](docs/especificacao.md) · **Vídeo Pitch:** https://youtu.be/3OH0aJraCqw?feature=shared.
 
 ![Home do MOVA](docs/img/home.jpg)
 
