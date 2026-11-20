@@ -94,7 +94,7 @@ function Index() {
                 </Link>
               </Button>
             </div>
-            <Link to="/oportunidades" className="mt-5 inline-flex items-center gap-2 text-sm text-primary hover:underline">
+            <Link to="/cadastro" search={{ perfil: "empresa" }} className="mt-5 inline-flex items-center gap-2 text-sm text-primary hover:underline">
               Sou empresa e quero oferecer uma vaga <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </div>
