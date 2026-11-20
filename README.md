@@ -6,7 +6,7 @@ Protótipo do desafio **CitizenTech — Global Solution 2026**. Robôs, empresas
 
 **Site:** <URL da Vercel> · **Especificação:** [docs/especificacao.md](docs/especificacao.md)
 
-![Home do MOVA](docs/img/home.png)
+![Home do MOVA](docs/img/home.jpg)
 
 ## O problema
 
@@ -39,7 +39,7 @@ Jornada: **Home → Cadastro (3 etapas) → Oportunidades (filtrar e ordenar por
 
 | Oportunidades | Central de controle | Painel |
 |---|---|---|
-| ![Oportunidades](docs/img/oportunidades.png) | ![Controle](docs/img/controle.png) | ![Painel](docs/img/painel.png) |
+| ![Oportunidades](docs/img/oportunidades.jpg) | ![Controle](docs/img/controle.jpg) | ![Painel](docs/img/painel.jpg) |
 
 ## Como o JavaScript melhora a experiência
 
