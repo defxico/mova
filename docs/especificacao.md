@@ -6,9 +6,9 @@ MOVA
 
 Sua presença não tem fronteira.
 
-| Projeto                                            | Versão | Status   | Origem                                                                                     |
-| -------------------------------------------------- | ------ | -------- | ------------------------------------------------------------------------------------------ |
-| MOVA, protótipo CitizenTech (Global Solution 2026) | 1.0    | Rascunho | Site publicado em neon-mova-command.lovable.app; código em https://github.com/defxico/mova |
+| Projeto                                            | Versão | Status             | Origem                                                                                    |
+| -------------------------------------------------- | ------ | ------------------ | ----------------------------------------------------------------------------------------- |
+| MOVA, protótipo CitizenTech (Global Solution 2026) | 1.0    | Protótipo entregue | Protótipo iniciado no Lovable e finalizado no repositório https://github.com/defxico/mova |
 
 ## 1. Visão geral
 
