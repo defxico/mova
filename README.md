@@ -85,9 +85,12 @@ npm run build
 
 ## Integrantes
 
-| Nome        | RM  |
-| ----------- | --- |
-| (preencher) |     |
+| Nome                         | RM       |
+| ---------------------------- | -------- |
+| Amanda Ayumi Guedes Ueno     | RM573609 |
+| Ana Rubia de Oliveira Freire | RM573171 |
+| Francisco Caetano Bernardes  | RM571399 |
+| Giovana Camargo Budin        | RM571861 |
 
 ## Origem
 
