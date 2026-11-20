@@ -1,0 +1,352 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MOVA design system — "Cyberpunk meets social impact".
+ * Deep black base, petrol-blue glass panels, cyan as the primary signal,
+ * electric violet as secondary, magenta reserved for highlights and alerts.
+ */
+
+@theme inline {
+  --font-display: "Orbitron", "Exo 2", system-ui, sans-serif;
+  --font-sans: var(--font-body);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  --font-scale: 1;
+  --font-body: "Exo 2", system-ui, sans-serif;
+
+  /* #090B12 deep black */
+  --background: oklch(0.155 0.016 272);
+  /* #EAF4FF cold white */
+  --foreground: oklch(0.962 0.018 250);
+  /* #101B2D petrol blue */
+  --surface: oklch(0.215 0.038 258);
+  --surface-raised: oklch(0.26 0.045 258);
+  --card: oklch(0.215 0.038 258 / 0.72);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.2 0.035 260);
+  --popover-foreground: var(--foreground);
+  /* #00F5FF neon cyan */
+  --primary: oklch(0.885 0.152 196);
+  --primary-foreground: oklch(0.155 0.016 272);
+  /* #8B5CF6 electric violet */
+  --secondary: oklch(0.606 0.219 293);
+  --secondary-foreground: oklch(0.985 0.01 290);
+  --muted: oklch(0.25 0.035 262);
+  --muted-foreground: oklch(0.78 0.03 250);
+  /* #FF2E93 neon magenta */
+  --accent: oklch(0.665 0.25 358);
+  --accent-foreground: oklch(0.985 0.01 350);
+  --destructive: oklch(0.64 0.24 22);
+  --destructive-foreground: oklch(0.985 0.01 20);
+  --success: oklch(0.82 0.18 155);
+  --success-foreground: oklch(0.16 0.03 160);
+  --warning: oklch(0.85 0.16 85);
+  --warning-foreground: oklch(0.18 0.03 80);
+  --border: oklch(0.885 0.152 196 / 0.18);
+  --input: oklch(0.885 0.152 196 / 0.28);
+  --ring: oklch(0.885 0.152 196);
+
+  --chart-1: oklch(0.885 0.152 196);
+  --chart-2: oklch(0.606 0.219 293);
+  --chart-3: oklch(0.665 0.25 358);
+  --chart-4: oklch(0.82 0.18 155);
+  --chart-5: oklch(0.85 0.16 85);
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--muted);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* Effects */
+  --gradient-neon: linear-gradient(110deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
+  --gradient-panel: linear-gradient(160deg, oklch(0.26 0.05 258 / 0.75), oklch(0.18 0.03 265 / 0.6));
+  --gradient-fade-left: linear-gradient(90deg, var(--background) 0%, oklch(0.155 0.016 272 / 0.85) 38%, transparent 75%);
+  --gradient-fade-bottom: linear-gradient(0deg, var(--background) 0%, transparent 40%);
+  --glow-primary: 0 0 0 1px oklch(0.885 0.152 196 / 0.45), 0 0 24px -4px oklch(0.885 0.152 196 / 0.55);
+  --glow-secondary: 0 0 0 1px oklch(0.606 0.219 293 / 0.5), 0 0 24px -4px oklch(0.606 0.219 293 / 0.6);
+  --glow-accent: 0 0 0 1px oklch(0.665 0.25 358 / 0.55), 0 0 28px -4px oklch(0.665 0.25 358 / 0.65);
+  --shadow-panel: 0 20px 50px -20px oklch(0 0 0 / 0.8), inset 0 1px 0 oklch(1 0 0 / 0.05);
+  --grid-line: oklch(0.885 0.152 196 / 0.06);
+}
+
+/* ===== Accessibility modes (toggled on <html>) ===== */
+html.a11y-contrast {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --surface: oklch(0.12 0 0);
+  --surface-raised: oklch(0.18 0 0);
+  --card: oklch(0.1 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.92 0 0);
+  --border: oklch(0.885 0.152 196 / 0.8);
+  --input: oklch(0.885 0.152 196);
+  --grid-line: transparent;
+}
+html.a11y-readable {
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+html.a11y-readable .font-display {
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-size: calc(100% * var(--font-scale));
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: oklch(0.885 0.152 196 / 0.35);
+    color: var(--foreground);
+  }
+}
+
+/* ===== Utilities ===== */
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+@utility text-neon {
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-neon {
+  background-image: var(--gradient-neon);
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@utility bg-fade-left {
+  background-image: var(--gradient-fade-left);
+}
+@utility bg-fade-bottom {
+  background-image: var(--gradient-fade-bottom);
+}
+
+@utility glass {
+  background: var(--gradient-panel);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-panel);
+}
+
+@utility glow-primary {
+  box-shadow: var(--glow-primary);
+}
+@utility glow-secondary {
+  box-shadow: var(--glow-secondary);
+}
+@utility glow-accent {
+  box-shadow: var(--glow-accent);
+}
+
+/* Angled HUD corner brackets */
+@utility hud-frame {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    border-color: var(--color-primary);
+    opacity: 0.85;
+  }
+  &::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  &::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
+}
+
+@utility clip-notch {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+@utility scanlines {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      oklch(0 0 0 / 0.18) 0px,
+      oklch(0 0 0 / 0.18) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+    mix-blend-mode: multiply;
+  }
+}
+
+@utility label-hud {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-muted-foreground);
+}
+
+/* ===== Animations ===== */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 oklch(0.885 0.152 196 / 0.6); }
+  100% { box-shadow: 0 0 0 10px oklch(0.885 0.152 196 / 0); }
+}
+@keyframes scan-sweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.6; }
+  94% { opacity: 1; }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -40; }
+}
+
+@utility animate-pulse-ring {
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+@utility animate-scan {
+  animation: scan-sweep 4s linear infinite;
+}
+@utility animate-flicker {
+  animation: flicker 6s linear infinite;
+}
+@utility animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+@utility animate-dash {
+  animation: dash-flow 1.6s linear infinite;
+}
+
+/* Large touch targets mode */
+html.a11y-large-targets .tap-target {
+  min-height: 3.5rem;
+  min-width: 3.5rem;
+}
+
+/* Scanning (single-switch) mode highlight on the robot control panel */
+[data-scan-active="true"] {
+  outline: 4px solid var(--accent) !important;
+  outline-offset: 3px;
+  box-shadow: var(--glow-accent) !important;
+}
