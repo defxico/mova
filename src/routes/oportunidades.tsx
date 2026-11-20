@@ -110,11 +110,11 @@ function OportunidadesPage() {
             </div>
             <div>
               <Label htmlFor="ordenar">Ordenar por</Label>
-              <select id="ordenar" className={cn(selectCls, "mt-1.5")} value={ordenar} onChange={(e) => setOrdenar(e.target.value as typeof ordenar)} disabled={!perfil}>
+              <select id="ordenar" className={cn(selectCls, "mt-1.5")} value={ordenar} onChange={(e) => setOrdenar(e.target.value as typeof ordenar)} disabled={!perfil} aria-describedby={perfil ? undefined : "ordenar-dica"}>
                 <option value="recentes">Mais recentes</option>
                 <option value="compat">Maior compatibilidade</option>
               </select>
-              {!perfil && <p className="mt-1 text-xs text-muted-foreground">Crie seu perfil para ordenar por compatibilidade.</p>}
+              {!perfil && <p id="ordenar-dica" className="mt-1 text-xs text-muted-foreground">Crie seu perfil para ordenar por compatibilidade.</p>}
             </div>
           </div>
         </aside>

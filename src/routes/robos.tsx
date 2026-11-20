@@ -65,7 +65,7 @@ function RobosPage() {
             </button>
           ))}
         </div>
-        <p className="sr-only" aria-live="polite">{lista.length} robôs exibidos</p>
+        <p className="label-hud mb-4" aria-live="polite">{lista.length} {lista.length === 1 ? "robô encontrado" : "robôs encontrados"}</p>
 
         <ul className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {lista.map((r) => (
