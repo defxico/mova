@@ -74,7 +74,7 @@ docs/           especificação, design e plano
 
 ## Como rodar
 
-Requer Node.js 20.19 ou mais novo.
+Requer Node.js >= 22.12.
 
 ```bash
 npm install

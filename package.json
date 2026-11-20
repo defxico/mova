@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "MOVA — vagas por robôs de telepresença para pessoas com deficiência ou mobilidade reduzida (protótipo CitizenTech, Global Solution 2026).",
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -48,8 +51,7 @@
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "8.1.5",
-    "vite-tsconfig-paths": "^6.0.2",
+    "vite": "8.3.8",
     "vitest": "^4.1.10"
   }
 }
