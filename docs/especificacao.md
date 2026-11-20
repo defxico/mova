@@ -279,6 +279,7 @@ Resolvido nesta entrega:
 - As páginas Meu painel (`/painel`) e Impacto (`/impacto`) foram criadas.
 - A compatibilidade é calculada em `src/lib/matching.ts`: 70% habilidades e 30% área de atuação.
 - Os dados (perfil, candidaturas, jornadas e preferências) são salvos no navegador, em `localStorage`.
+- RF-37 coberto: ao salvar o perfil, os recursos de acessibilidade escolhidos são aplicados ao modo de controle do simulador (varredura e atalhos de teclado), em `src/lib/perfil-a11y.ts`. A pontuação de compatibilidade por recursos de acessibilidade e por robô fica para a fase 2.
 
 ## 14. Próximas fases
 

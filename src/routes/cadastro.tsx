@@ -19,6 +19,7 @@ import {
   type ErrosEmpresa,
 } from "@/lib/validation";
 import { acoes } from "@/lib/mova-store";
+import { preferenciasDoPerfil } from "@/lib/perfil-a11y";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/cadastro")({
@@ -178,6 +179,8 @@ function FormProfissional() {
       return;
     }
     acoes.salvarPerfil({ ...dados, estado: dados.estado.toUpperCase() });
+    const prefs = preferenciasDoPerfil(dados.recursos);
+    if (Object.keys(prefs).length) acoes.atualizarA11y(prefs);
     setConcluido(true);
     toast.success(`Perfil criado! Bem-vinda(o), ${dados.nome.split(" ")[0]}.`);
   };
