@@ -263,14 +263,14 @@ function Console({ robo }: { robo: Robo }) {
       {/* Top command bar */}
       <div className="border-b border-border bg-background/70 backdrop-blur">
         <div className="mx-auto flex max-w-[1600px] flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
-          <div className="flex items-center gap-3">
+          <div className="flex min-w-0 max-w-full items-center gap-3">
             <span className="label-hud !text-primary">// tela 04</span>
             <Label htmlFor="sel-robo" className="sr-only">Escolher robô</Label>
             <select
               id="sel-robo"
               value={robo.id}
               onChange={(e) => navigate({ to: "/controle", search: { robo: e.target.value } })}
-              className="tap-target h-10 rounded-md border border-input bg-surface px-3 font-display text-sm tracking-wider"
+              className="tap-target h-10 min-w-0 max-w-full rounded-md border border-input bg-surface px-3 font-display text-sm tracking-wider"
             >
               {ROBOS.map((r) => (
                 <option key={r.id} value={r.id} disabled={!podeSimular(r)}>

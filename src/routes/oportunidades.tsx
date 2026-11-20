@@ -58,7 +58,7 @@ function OportunidadesPage() {
         Cada vaga acontece em um ambiente físico real, por meio de um robô. Você trabalha de onde estiver.
       </PageIntro>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[280px_1fr]">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[280px_1fr]">
         {/* Filtros */}
         <aside aria-labelledby="filtros-titulo" className="lg:sticky lg:top-24 lg:self-start">
           <div className="glass hud-frame space-y-5 rounded-lg p-5">
@@ -135,7 +135,7 @@ function OportunidadesPage() {
               <Button variant="hud" className="mt-4" onClick={() => setF(FILTROS_PADRAO)}>Limpar filtros</Button>
             </div>
           ) : (
-            <ul className="grid gap-5 md:grid-cols-2">
+            <ul className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {lista.map(({ v, score }) => {
                 const salva = salvas.includes(v.id);
                 const candidatou = candidaturas.some((c) => c.vagaId === v.id);
