@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CadastroRouteImport } from './routes/cadastro'
 import { Route as ControleRouteImport } from './routes/controle'
+import { Route as ImpactoRouteImport } from './routes/impacto'
 import { Route as OportunidadesRouteImport } from './routes/oportunidades'
 import { Route as PainelRouteImport } from './routes/painel'
 import { Route as RobosRouteImport } from './routes/robos'
@@ -29,6 +30,11 @@ const CadastroRoute = CadastroRouteImport.update({
 const ControleRoute = ControleRouteImport.update({
   id: '/controle',
   path: '/controle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactoRoute = ImpactoRouteImport.update({
+  id: '/impacto',
+  path: '/impacto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OportunidadesRoute = OportunidadesRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cadastro': typeof CadastroRoute
   '/controle': typeof ControleRoute
+  '/impacto': typeof ImpactoRoute
   '/oportunidades': typeof OportunidadesRoute
   '/painel': typeof PainelRoute
   '/robos': typeof RobosRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cadastro': typeof CadastroRoute
   '/controle': typeof ControleRoute
+  '/impacto': typeof ImpactoRoute
   '/oportunidades': typeof OportunidadesRoute
   '/painel': typeof PainelRoute
   '/robos': typeof RobosRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/cadastro': typeof CadastroRoute
   '/controle': typeof ControleRoute
+  '/impacto': typeof ImpactoRoute
   '/oportunidades': typeof OportunidadesRoute
   '/painel': typeof PainelRoute
   '/robos': typeof RobosRoute
@@ -75,14 +84,28 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/cadastro' | '/controle' | '/oportunidades' | '/painel' | '/robos'
+    | '/'
+    | '/cadastro'
+    | '/controle'
+    | '/impacto'
+    | '/oportunidades'
+    | '/painel'
+    | '/robos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cadastro' | '/controle' | '/oportunidades' | '/painel' | '/robos'
+  to:
+    | '/'
+    | '/cadastro'
+    | '/controle'
+    | '/impacto'
+    | '/oportunidades'
+    | '/painel'
+    | '/robos'
   id:
     | '__root__'
     | '/'
     | '/cadastro'
     | '/controle'
+    | '/impacto'
     | '/oportunidades'
     | '/painel'
     | '/robos'
@@ -92,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CadastroRoute: typeof CadastroRoute
   ControleRoute: typeof ControleRoute
+  ImpactoRoute: typeof ImpactoRoute
   OportunidadesRoute: typeof OportunidadesRoute
   PainelRoute: typeof PainelRoute
   RobosRoute: typeof RobosRoute
@@ -118,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/controle'
       fullPath: '/controle'
       preLoaderRoute: typeof ControleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impacto': {
+      id: '/impacto'
+      path: '/impacto'
+      fullPath: '/impacto'
+      preLoaderRoute: typeof ImpactoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/oportunidades': {
@@ -148,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CadastroRoute: CadastroRoute,
   ControleRoute: ControleRoute,
+  ImpactoRoute: ImpactoRoute,
   OportunidadesRoute: OportunidadesRoute,
   PainelRoute: PainelRoute,
   RobosRoute: RobosRoute,
